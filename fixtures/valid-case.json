@@ -1,0 +1,54 @@
+{
+  "case_id": "FM-2026-11-0417",
+  "procedure": "fault-management",
+  "started_at": "2026-11-02T09:12Z",
+  "ended_at": "2026-11-02T10:36Z",
+  "tasks": [
+    {
+      "name": "diagnose-and-restore",
+      "steps": [
+        {
+          "action": "correlate-alarms",
+          "application": "network-monitoring-platform",
+          "actor_role": "operations-agent",
+          "timestamp": "2026-11-02T09:13Z"
+        },
+        {
+          "action": "loopback-test",
+          "application": "line-test-system",
+          "actor_role": "operations-agent",
+          "timestamp": "2026-11-02T09:20Z",
+          "decisions": [
+            {
+              "branch_condition": "mttr_estimate > 120",
+              "evidence": "estimate 141 min"
+            }
+          ]
+        },
+        {
+          "action": "dispatch-field-crew",
+          "application": "dispatch-system",
+          "actor_role": "shift-supervisor",
+          "handoff": true,
+          "timestamp": "2026-11-02T09:41Z"
+        }
+      ]
+    }
+  ],
+  "actor_roles": [
+    "operations-agent",
+    "shift-supervisor",
+    "field-crew"
+  ],
+  "outcome": {
+    "result": "achieved",
+    "cycle_time": 84,
+    "cost_per_case": 312,
+    "first_pass": true
+  },
+  "provenance": {
+    "stitching_version": "stitch-1.2.0",
+    "capture_surface_declaration_version": "csd-2026-10",
+    "correlation_key": "fault-ticket:FM-2026-11-0417"
+  }
+}

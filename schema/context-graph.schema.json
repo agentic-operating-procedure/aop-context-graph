@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/agentic-operating-procedure/aop-context-graph/schema/context-graph.schema.json",
+  "title": "Context Graph of Work Export",
+  "description": "Schema for an export of the Context Graph of Work: typed nodes and typed edges per the entity model. Uses the same JSON Schema subset as the aop-spec reference validator.",
+  "type": "object",
+  "required": ["graph", "capture_surface_declaration_version", "stitching_version", "nodes", "edges"],
+  "additionalProperties": false,
+  "properties": {
+    "graph": { "type": "string", "description": "Identifier of the graph or estate export" },
+    "capture_surface_declaration_version": { "type": "string", "minLength": 1 },
+    "stitching_version": { "type": "string", "minLength": 1 },
+    "nodes": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/node" }
+    },
+    "edges": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/edge" }
+    }
+  },
+  "$defs": {
+    "node": {
+      "type": "object",
+      "required": ["id", "type", "evidence"],
+      "additionalProperties": true,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "enum": ["CASE", "TASK", "STEP", "ACTOR", "APPLICATION", "DECISION", "RULE", "EXCEPTION", "ESCALATION", "OUTCOME"] },
+        "evidence": { "$ref": "#/$defs/evidence" },
+        "attributes": { "type": "object" }
+      }
+    },
+    "edge": {
+      "type": "object",
+      "required": ["from", "to", "relation"],
+      "additionalProperties": false,
+      "properties": {
+        "from": { "type": "string", "minLength": 1 },
+        "to": { "type": "string", "minLength": 1 },
+        "relation": { "enum": ["contains", "comprises", "performedBy", "executesIn", "evaluates", "applies", "raises", "triggers", "produces", "follows"] },
+        "evidence": { "$ref": "#/$defs/evidence" }
+      }
+    },
+    "evidence": {
+      "description": "Per CG-2: which cases traversed, how often, and observed outcome and cost distributions where applicable. A node or edge without evidence is not part of the graph.",
+      "type": "object",
+      "required": ["case_references"],
+      "additionalProperties": true,
+      "properties": {
+        "case_references": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+        "frequency": { "type": "number", "minimum": 0 },
+        "outcome_distribution": { "type": "object" },
+        "cost_distribution": { "type": "object" }
+      }
+    }
+  }
+}

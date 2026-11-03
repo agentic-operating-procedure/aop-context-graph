@@ -1,0 +1,106 @@
+{
+  "graph": "estate-a-fault-management",
+  "capture_surface_declaration_version": "csd-2026-10",
+  "stitching_version": "stitch-1.2.0",
+  "nodes": [
+    {
+      "id": "CASE:FM-2026-11-0417",
+      "type": "CASE",
+      "evidence": {
+        "case_references": [
+          "FM-2026-11-0417"
+        ]
+      },
+      "attributes": {
+        "procedure": "fault-management"
+      }
+    },
+    {
+      "id": "STEP:FM-2026-11-0417:3",
+      "type": "STEP",
+      "evidence": {
+        "case_references": [
+          "FM-2026-11-0417"
+        ],
+        "frequency": 0.62
+      },
+      "attributes": {
+        "action": "dispatch-field-crew"
+      }
+    },
+    {
+      "id": "ROLE:shift-supervisor",
+      "type": "ACTOR",
+      "evidence": {
+        "case_references": [
+          "FM-2026-11-0417"
+        ],
+        "frequency": 0.62
+      }
+    },
+    {
+      "id": "APP:dispatch-system",
+      "type": "APPLICATION",
+      "evidence": {
+        "case_references": [
+          "FM-2026-11-0417"
+        ],
+        "frequency": 0.62
+      }
+    },
+    {
+      "id": "OUT:FM-2026-11-0417",
+      "type": "OUTCOME",
+      "evidence": {
+        "case_references": [
+          "FM-2026-11-0417"
+        ],
+        "outcome_distribution": {
+          "achieved": 1
+        }
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "CASE:FM-2026-11-0417",
+      "to": "STEP:FM-2026-11-0417:3",
+      "relation": "comprises",
+      "evidence": {
+        "case_references": [
+          "FM-2026-11-0417"
+        ]
+      }
+    },
+    {
+      "from": "STEP:FM-2026-11-0417:3",
+      "to": "ROLE:shift-supervisor",
+      "relation": "performedBy",
+      "evidence": {
+        "case_references": [
+          "FM-2026-11-0417"
+        ]
+      }
+    },
+    {
+      "from": "STEP:FM-2026-11-0417:3",
+      "to": "APP:dispatch-system",
+      "relation": "executesIn",
+      "evidence": {
+        "case_references": [
+          "FM-2026-11-0417"
+        ]
+      }
+    },
+    {
+      "from": "CASE:FM-2026-11-0417",
+      "to": "OUT:FM-2026-11-0417",
+      "relation": "produces",
+      "evidence": {
+        "case_references": [
+          "FM-2026-11-0417"
+        ]
+      }
+    }
+  ]
+}
