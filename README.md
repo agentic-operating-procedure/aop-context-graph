@@ -7,7 +7,7 @@
 | Authority | The substrate: entity model, case schema, stitching, twin, drift detection, observation posture |
 | Tier | Substrate |
 | Landing wave | 3 |
-| Version | 0.1.0 |
+| Version | 0.2.0 |
 | Status | Stable |
 | Licence | MIT |
 
@@ -41,6 +41,7 @@ It answers the hardest question in the programme: how does the system know what 
 | [The Digital Twin of Operations](./docs/aop-digital-twin-substrate-scope.md) | The five aspects, the graph-versus-knowledge-graph distinction |
 | [Drift detection](./docs/aop-drift-detection-substrate-scope.md) | Drift classes, detection latency, the recalibration trigger |
 | [The observation posture](./docs/aop-observation-posture-substrate-scope.md) | Declared capture surface, excluded classes, minimisation, retention |
+| [Process alignment](./docs/aop-process-alignment-substrate-scope.md) | Associating CASE, TASK and STEP with the OpenDEA Business Process Catalog, by reference or declared gap |
 
 ## Schemas
 

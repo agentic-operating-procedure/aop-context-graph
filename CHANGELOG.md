@@ -4,6 +4,14 @@ All notable changes to this repository are documented here. Format follows [Keep
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-11-04
+
+### Added
+
+- Published the process alignment rules (CG-PA-1 to CG-PA-6): CASE, TASK and STEP associate with the OpenDEA Business Process Catalog levels (process, activity, task) by reference and catalog version, with an explicit reference-or-gap rule and a gap work queue. Inventing a process identifier is prohibited.
+- The case record schema carries optional process_ref on the case and its tasks, the alignment gap declaration, and the process catalog version in provenance.
+
+
 ## [0.1.0] - 2026-11-04
 
 ### Substrate foundation
@@ -16,5 +24,6 @@ All notable changes to this repository are documented here. Format follows [Keep
 - Published the observation posture: the declared capture surface, at-source exclusion of personal content classes, role-not-person modelling, minimisation, retention and access rules.
 - Published the machine-readable schemas: the Context Graph export schema and the stitched case record schema, both validated by the shared reference validator in `aop-spec`.
 
-[Unreleased]: https://github.com/agentic-operating-procedure/aop-context-graph/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/agentic-operating-procedure/aop-context-graph/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/agentic-operating-procedure/aop-context-graph/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/agentic-operating-procedure/aop-context-graph/releases/tag/v0.1.0
