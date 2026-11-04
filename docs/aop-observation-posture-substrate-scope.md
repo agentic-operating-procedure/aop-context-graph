@@ -28,6 +28,8 @@ CG-O7: Access to the substrate is role-based and audited. The twin is not genera
 
 CG-O8: These rules bind the runtime's observation too: the case records the harness emits (SEC-8) land in the substrate under the same posture. Agent execution gets no wider capture rights than human execution had.
 
+CG-O9: Observation operates only under a declared lawful basis for the capture surface, and only after the consultation the basis requires (employee representative or works-council consultation where the jurisdiction provides for it) is complete and recorded. The declaration version carries both, and capture does not begin until they are present. A privacy review approval (section 4) is necessary but not sufficient: the lawful basis and the consultation are recorded facts, not implied ones.
+
 ## 5. What the posture does not fix
 
 The posture fixes what may be captured and held. It does not replace the estate's legal review, its regulatory obligations, or its jurisdiction-specific privacy law compliance. Each estate's declaration is expected to be approved by its own privacy review; the substrate carries the declaration and enforces the rules above, and it refuses to operate where no declaration exists.

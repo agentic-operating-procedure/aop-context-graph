@@ -4,6 +4,13 @@ All notable changes to this repository are documented here. Format follows [Keep
 
 ## [Unreleased]
 
+## [0.2.1] - 2026-11-05
+
+### Added (CR-009 block 1)
+
+- CG-O9: observation operates only under a declared lawful basis with completed consultation, recorded in the capture surface declaration before capture begins.
+
+
 ## [0.2.0] - 2026-11-04
 
 ### Added
@@ -24,6 +31,7 @@ All notable changes to this repository are documented here. Format follows [Keep
 - Published the observation posture: the declared capture surface, at-source exclusion of personal content classes, role-not-person modelling, minimisation, retention and access rules.
 - Published the machine-readable schemas: the Context Graph export schema and the stitched case record schema, both validated by the shared reference validator in `aop-spec`.
 
-[Unreleased]: https://github.com/agentic-operating-procedure/aop-context-graph/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/agentic-operating-procedure/aop-context-graph/compare/v0.2.1...HEAD
+[v0.2.1]: https://github.com/agentic-operating-procedure/aop-context-graph/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/agentic-operating-procedure/aop-context-graph/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/agentic-operating-procedure/aop-context-graph/releases/tag/v0.1.0
