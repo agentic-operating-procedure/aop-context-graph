@@ -7,7 +7,7 @@
 | Authority | The substrate: entity model, case schema, stitching, twin, drift detection, observation posture |
 | Tier | Substrate |
 | Landing wave | 3 |
-| Version | 0.2.1 |
+| Version | 0.3.0 |
 | Status | Stable |
 | Licence | MIT |
 

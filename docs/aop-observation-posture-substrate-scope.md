@@ -30,6 +30,10 @@ CG-O8: These rules bind the runtime's observation too: the case records the harn
 
 CG-O9: Observation operates only under a declared lawful basis for the capture surface, and only after the consultation the basis requires (employee representative or works-council consultation where the jurisdiction provides for it) is complete and recorded. The declaration version carries both, and capture does not begin until they are present. A privacy review approval (section 4) is necessary but not sufficient: the lawful basis and the consultation are recorded facts, not implied ones.
 
+CG-O10: Contestability. An operator or affected party can contest a derived rule or a data use through the estate's governance: the contest is filed as a finding against `aop-governance`, the contested artefact's ratification is reviewed, and the outcome (uphold, amend, withdraw) is recorded. Contesting is a governed act with a record, not an off-channel complaint.
+
+CG-O11: Quarantine on provenance failure. Where source identity or integrity verification fails (CG-S17), the affected events and cases are quarantined with the failure reason, compilation consuming them fails closed, and the quarantine is a recoverable incident record (CR-020, CR-025).
+
 ## 5. What the posture does not fix
 
 The posture fixes what may be captured and held. It does not replace the estate's legal review, its regulatory obligations, or its jurisdiction-specific privacy law compliance. Each estate's declaration is expected to be approved by its own privacy review; the substrate carries the declaration and enforces the rules above, and it refuses to operate where no declaration exists.

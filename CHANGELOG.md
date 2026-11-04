@@ -4,6 +4,15 @@ All notable changes to this repository are documented here. Format follows [Keep
 
 ## [Unreleased]
 
+## [v0.3.0] - 2026-11-05
+
+### Added (Wave H2: CR-013/020)
+
+- CG-S15 (case origin stitched from actor classes), CG-S16 (corpus quality facts: sampling, inclusion and exclusion with counts, missingness, coverage gaps), CG-S17 (source identity and integrity metadata verified at stitching).
+- CG-O10 (contestability: a governed finding process) and CG-O11 (quarantine on provenance failure; compilation fails closed).
+- Case schema: the origin field and the provenance corpus_quality block.
+
+
 ## [0.2.1] - 2026-11-05
 
 ### Added (CR-009 block 1)
@@ -31,7 +40,8 @@ All notable changes to this repository are documented here. Format follows [Keep
 - Published the observation posture: the declared capture surface, at-source exclusion of personal content classes, role-not-person modelling, minimisation, retention and access rules.
 - Published the machine-readable schemas: the Context Graph export schema and the stitched case record schema, both validated by the shared reference validator in `aop-spec`.
 
-[Unreleased]: https://github.com/agentic-operating-procedure/aop-context-graph/compare/v0.2.1...HEAD
+[Unreleased]: https://github.com/agentic-operating-procedure/aop-context-graph/compare/v0.3.0...HEAD
+[v0.3.0]: https://github.com/agentic-operating-procedure/aop-context-graph/compare/v0.2.1...v0.3.0
 [v0.2.1]: https://github.com/agentic-operating-procedure/aop-context-graph/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/agentic-operating-procedure/aop-context-graph/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/agentic-operating-procedure/aop-context-graph/releases/tag/v0.1.0

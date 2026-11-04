@@ -5,14 +5,25 @@
   "description": "Schema for a stitched end-to-end case per the case schema document. The unit compilation consumes, provenance reaches back to, and the runtime case record is modelled on.",
   "type": "object",
   "required": [
-    "case_id", "procedure", "started_at", "ended_at",
-    "tasks", "actor_roles", "outcome",
+    "case_id",
+    "procedure",
+    "started_at",
+    "ended_at",
+    "tasks",
+    "actor_roles",
+    "outcome",
     "provenance"
   ],
   "additionalProperties": true,
   "properties": {
-    "case_id": { "type": "string", "minLength": 1 },
-    "procedure": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "case_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "procedure": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
     "process_ref": {
       "type": "string",
       "pattern": "^processes:(process|activity)-[a-z0-9-]+$",
@@ -22,17 +33,29 @@
       "type": "string",
       "description": "Where no canonical catalog entry exists (CG-PA-5): the description of the gap to lodge as a contribution to dea-catalog-business-processes."
     },
-    "started_at": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}" },
-    "ended_at": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}" },
+    "started_at": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}"
+    },
+    "ended_at": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}"
+    },
     "tasks": {
       "type": "array",
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["name", "steps"],
+        "required": [
+          "name",
+          "steps"
+        ],
         "additionalProperties": true,
         "properties": {
-          "name": { "type": "string", "minLength": 1 },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
           "process_ref": {
             "type": "string",
             "pattern": "^processes:(activity|task)-[a-z0-9-]+$",
@@ -43,24 +66,51 @@
             "minItems": 1,
             "items": {
               "type": "object",
-              "required": ["action", "application", "timestamp"],
+              "required": [
+                "action",
+                "application",
+                "timestamp"
+              ],
               "additionalProperties": true,
               "properties": {
-                "action": { "type": "string", "minLength": 1 },
-                "application": { "type": "string", "minLength": 1 },
-                "actor_role": { "type": "string", "description": "Role, never a person (CG-1). Absent means unattributed per CG-S6." },
-                "unattributed": { "type": "boolean" },
-                "handoff": { "type": "boolean" },
-                "timestamp": { "type": "string", "minLength": 1 },
+                "action": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "application": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "actor_role": {
+                  "type": "string",
+                  "description": "Role, never a person (CG-1). Absent means unattributed per CG-S6."
+                },
+                "unattributed": {
+                  "type": "boolean"
+                },
+                "handoff": {
+                  "type": "boolean"
+                },
+                "timestamp": {
+                  "type": "string",
+                  "minLength": 1
+                },
                 "decisions": {
                   "type": "array",
                   "items": {
                     "type": "object",
-                    "required": ["branch_condition"],
+                    "required": [
+                      "branch_condition"
+                    ],
                     "additionalProperties": true,
                     "properties": {
-                      "branch_condition": { "type": "string", "minLength": 1 },
-                      "evidence": { "type": "string" }
+                      "branch_condition": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "evidence": {
+                        "type": "string"
+                      }
                     }
                   }
                 },
@@ -68,20 +118,45 @@
                   "type": "array",
                   "items": {
                     "type": "object",
-                    "required": ["condition"],
+                    "required": [
+                      "condition"
+                    ],
                     "additionalProperties": true,
                     "properties": {
-                      "condition": { "type": "string", "minLength": 1 },
-                      "class": { "type": "string" },
-                      "severity": { "enum": ["low", "moderate", "high", "critical"] },
-                      "recoverability": { "type": "string" },
+                      "condition": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "class": {
+                        "type": "string"
+                      },
+                      "severity": {
+                        "enum": [
+                          "low",
+                          "moderate",
+                          "high",
+                          "critical"
+                        ]
+                      },
+                      "recoverability": {
+                        "type": "string"
+                      },
                       "escalation": {
                         "type": "object",
-                        "required": ["target_role", "reason"],
+                        "required": [
+                          "target_role",
+                          "reason"
+                        ],
                         "additionalProperties": true,
                         "properties": {
-                          "target_role": { "type": "string", "minLength": 1 },
-                          "reason": { "type": "string", "minLength": 1 }
+                          "target_role": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "reason": {
+                            "type": "string",
+                            "minLength": 1
+                          }
                         }
                       }
                     }
@@ -96,15 +171,23 @@
     "actor_roles": {
       "type": "array",
       "description": "Roles that participated. Persons do not appear (CG-1).",
-      "items": { "type": "string", "minLength": 1 }
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
     },
     "incomplete_case": {
       "type": "object",
       "description": "Present when a handoff broke the case (CG-S11). Incomplete cases are retained and marked, not discarded (CG-S12).",
       "additionalProperties": false,
       "properties": {
-        "reason": { "type": "string", "minLength": 1 },
-        "missing_from": { "type": "string" }
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "missing_from": {
+          "type": "string"
+        }
       }
     },
     "stitching_confidence": {
@@ -115,29 +198,75 @@
     },
     "outcome": {
       "type": "object",
-      "required": ["result"],
+      "required": [
+        "result"
+      ],
       "additionalProperties": true,
       "properties": {
-        "result": { "enum": ["achieved", "partially_achieved", "not_achieved", "achieved_with_deviation", "inconclusive"] },
-        "cycle_time": { "type": "number" },
-        "cost_per_case": { "type": "number" },
-        "first_pass": { "type": "boolean" }
+        "result": {
+          "enum": [
+            "achieved",
+            "partially_achieved",
+            "not_achieved",
+            "achieved_with_deviation",
+            "inconclusive"
+          ]
+        },
+        "cycle_time": {
+          "type": "number"
+        },
+        "cost_per_case": {
+          "type": "number"
+        },
+        "first_pass": {
+          "type": "boolean"
+        }
       }
     },
     "provenance": {
       "type": "object",
-      "required": ["stitching_version", "capture_surface_declaration_version"],
+      "required": [
+        "stitching_version",
+        "capture_surface_declaration_version"
+      ],
       "additionalProperties": true,
       "properties": {
-        "stitching_version": { "type": "string", "minLength": 1 },
-        "capture_surface_declaration_version": { "type": "string", "minLength": 1 },
+        "stitching_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "capture_surface_declaration_version": {
+          "type": "string",
+          "minLength": 1
+        },
         "process_catalog_version": {
           "type": "string",
           "description": "The DEA Business Process Catalog version the process references were resolved against (CG-PA-3)."
         },
-        "source_events": { "type": "array", "items": { "type": "string" } },
-        "correlation_key": { "type": "string", "description": "The domain correlation key where one exists (CG-S1)." }
+        "source_events": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "correlation_key": {
+          "type": "string",
+          "description": "The domain correlation key where one exists (CG-S1)."
+        },
+        "corpus_quality": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "CG-S16: sampling method, inclusion/exclusion with counts, missingness, cohort, date range, coverage gaps."
+        }
       }
+    },
+    "origin": {
+      "enum": [
+        "human",
+        "agent",
+        "mixed"
+      ],
+      "description": "The case's origin, stitched from actor classes (CG-S15, NM-CTL-6). Agent-originated cases are excluded from baseline mining by default."
     }
   }
 }

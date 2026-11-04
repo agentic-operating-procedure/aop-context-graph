@@ -42,6 +42,14 @@ CG-S11: A handoff between actors or systems, including a runtime handoff emitted
 
 CG-S12: Incomplete cases are retained and marked, not discarded. The proportion of incomplete cases per family is a drift-relevant signal in its own right.
 
+## 5a. Origin, corpus quality and plane integrity
+
+CG-S15: Every case carries its origin: `human`, `agent`, or `mixed` (NM-CTL-6). Origin is stitched from the capture surfaces' actor classes, not inferred after the fact. The origin mix of a corpus is reported with every compile and every evaluation claim.
+
+CG-S16: The corpus provenance records its quality facts: sampling method, inclusion and exclusion criteria with their counts, missingness, cohort, date range, and known coverage gaps. A team can reproduce why a case was excluded (CG-S10 quarantine reasons are first-class).
+
+CG-S17: Source events carry authenticated source identity and integrity metadata sufficient to detect forgery, replay, deletion and unauthorised relinking (CR-020). Stitching verifies them; a failed verification quarantines the event with its reason, and provenance failure at case level fails compilation closed rather than poisoning authority-bearing rules.
+
 ## 6. Versioning and determinism
 
 CG-S13: Stitching is deterministic and versioned. The same input events under the same stitching version produce the same cases. A stitching version change that would alter case boundaries is a change request against this repository, because variant frequencies, thresholds and drift baselines are all computed from those boundaries.
