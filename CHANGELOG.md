@@ -4,6 +4,10 @@ All notable changes to this repository are documented here. Format follows [Keep
 
 ## [Unreleased]
 
+### Changed
+
+- Licence switched from MIT to Apache-2.0 (CR-046).
+
 ## [0.3.0] - 2026-11-05
 
 ### Added (Wave H2: CR-013/020)
